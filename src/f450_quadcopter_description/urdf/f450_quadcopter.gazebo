@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<robot name="f450_quadcopter" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so">
+    <legacyModeNS>true</legacyModeNS>
+  </plugin>
+</gazebo>
+
+
+
+
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="front_right_landing_gear_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="front_left_landing_gear_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_right_landing_gear_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_left_landing_gear_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="front_right_frame_with_ESC_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="front_left_frame_with_ESC_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_right_frame_with_ESC_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_left_frame_with_ESC_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="front_right_brushless_motor_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="front_left_brushless_motor_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_left_brushless_motor_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_right_brushless_motor_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="front_right_propeller_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="front_left_propeller_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_right_propeller_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="back_left_propeller_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="battery_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/f450_quadcopter</robotNamespace>
+  </plugin>
+
+  <plugin name="motor_model_plugin" filename="motor_model_plugin.py">
+    <robotNamespace>/f450_quadcopter</robotNamespace>
+    <!-- Add motor-specific parameters here -->
+    <motor>
+      <max_torque>0.289</max_torque>
+      <max_speed_rpm>11100</max_speed_rpm>
+      <efficiency>0.80</efficiency>
+      <kv_rating>1000</kv_rating>
+      <kt_rating>0.024</kt_rating>
+    </motor>
+  </plugin>
+
+  <plugin name="aerodynamics_model_plugin" filename="aerodynamics_model_plugin.py">
+    <robotNamespace>/f450_quadcopter</robotNamespace>
+    <!-- Add aerodynamics-specific parameters here -->
+    <aerodynamics>
+      <lift_coefficient>0.042</lift_coefficient>
+      <drag_coefficient>0.031</drag_coefficient>
+      <propeller_diameter>0.254</propeller_diameter>
+      <propeller_pitch>0.1143</propeller_pitch>
+      <air_density>1.225</air_density>
+    </aerodynamics>
+  </plugin>
+</gazebo>
+
+<gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <!-- Add the plugin parameters here -->
+      <updateRate>1000.0</updateRate>
+      <alwaysOn>true</alwaysOn>
+      <bodyName>base_link</bodyName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <topicName>/imu/data</topicName>
+      <frameId>base_link</frameId>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+    </plugin>
+  </gazebo>
+
+</robot>

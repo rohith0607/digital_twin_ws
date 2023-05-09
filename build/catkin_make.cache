@@ -1,0 +1,2 @@
+custom_gazebo_python_plugins:f450_quadcopter_description:teleop_twist_keyboard
+-DCATKIN_DEVEL_PREFIX=/home/osboxes/digital_twin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/osboxes/digital_twin_ws/install -G Unix Makefiles

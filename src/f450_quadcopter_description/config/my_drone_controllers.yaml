@@ -1,0 +1,38 @@
+f450_quadcopter_controller:
+  # Generic quadcopter controller
+  quadcopter_controller:
+    type: "gazebo_plugins/GenericQuadcopterController"
+    base_link: "base_link"
+    front_left_motor_joint: "front_left_motor_joint"
+    front_right_motor_joint: "front_right_motor_joint"
+    back_left_motor_joint: "back_left_motor_joint"
+    back_right_motor_joint: "back_right_motor_joint"
+    motor_force_constant: 0.024  # motor Kt rating
+    motor_torque_constant: 0.1
+    motor_time_constant: 0.1
+    motor_max_angular_velocity: 11100  # motor max speed (RPM)
+    front_left_motor_direction: 1.0
+    front_right_motor_direction: -1.0
+    back_left_motor_direction: -1.0
+    back_right_motor_direction: 1.0
+    roll_gain: 0.2
+    pitch_gain: 0.2
+    yaw_gain: 0.1
+    altitude_gain: 0.5
+    cmd_vel_timeout: 0.5
+    enable_state_publisher: true
+    state_publisher_rate: 50.0
+    use_aerodynamics_plugin: true
+    aerodynamics_plugin: "gazebo_plugins/AerodynamicsPlugin"
+    use_motor_model_plugin: true
+    motor_model_plugin: "gazebo_plugins/MotorModelPlugin"
+    motor:
+      max_torque: 0.289
+      efficiency: 0.8
+      Kv: 1000
+    aerodynamics:
+      propeller_diameter: 0.254
+      propeller_pitch: 0.1143
+      lift_coefficient: 0.042
+      drag_coefficient: 0.031
+      air_density: 1.225

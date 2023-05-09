@@ -1,0 +1,15 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro $(find f450_quadcopter_description)/urdf/f450_quadcopter.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model f450_quadcopter"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <include file="$(find f450_quadcopter_description)/launch/controller.launch"/>
+  <!-- <include file="$(find teleop_twist_keyboard)/teleop_twist_keyboard.py"/> -->
+
+</launch>

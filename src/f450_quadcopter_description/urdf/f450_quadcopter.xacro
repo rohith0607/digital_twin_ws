@@ -1,0 +1,499 @@
+<?xml version="1.0" ?>
+<robot name="f450_quadcopter" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find f450_quadcopter_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find f450_quadcopter_description)/urdf/f450_quadcopter.trans" />
+<xacro:include filename="$(find f450_quadcopter_description)/urdf/f450_quadcopter.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0009406193490346438 -0.0030878426147049366 0.04067397897871896" rpy="0 0 0"/>
+    <mass value="0.7297364198372553"/>
+    <inertia ixx="0.000888" iyy="0.000794" izz="0.000978" ixy="-7e-06" iyz="3e-06" ixz="-1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_landing_gear_1">
+  <inertial>
+    <origin xyz="0.025294261945812482 -0.041134436986035604 -0.05102739648689262" rpy="0 0 0"/>
+    <mass value="0.07882046618471968"/>
+    <inertia ixx="0.000231" iyy="0.000231" izz="9.8e-05" ixy="4.8e-05" iyz="-8.5e-05" ixz="8.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.046836 0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.046836 0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_landing_gear_1">
+  <inertial>
+    <origin xyz="0.024360822856426795 0.04342215792884165 -0.05102747097051817" rpy="0 0 0"/>
+    <mass value="0.07882027338023602"/>
+    <inertia ixx="0.000239" iyy="0.000223" izz="9.8e-05" ixy="-4.7e-05" iyz="9.3e-05" ixz="7.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.046836 -0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.046836 -0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_right_landing_gear_1">
+  <inertial>
+    <origin xyz="-0.02667350157922735 -0.03975523117073223 -0.05102720548397814" rpy="0 0 0"/>
+    <mass value="0.07882036783881333"/>
+    <inertia ixx="0.000231" iyy="0.000231" izz="9.8e-05" ixy="-4.8e-05" iyz="-8.5e-05" ixz="-8.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.04622 0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.04622 0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_left_landing_gear_1">
+  <inertial>
+    <origin xyz="-0.025294199385980626 0.04113446662354433 -0.05102743593945869" rpy="0 0 0"/>
+    <mass value="0.07882021989137157"/>
+    <inertia ixx="0.000231" iyy="0.000231" izz="9.8e-05" ixy="4.8e-05" iyz="8.5e-05" ixz="-8.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.04622 -0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.04622 -0.032032 0.001109" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_landing_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_frame_with_ESC_1">
+  <inertial>
+    <origin xyz="0.0627356625385908 -0.0462589561999283 -0.00913633438305346" rpy="0 0 0"/>
+    <mass value="0.05710348684611358"/>
+    <inertia ixx="0.000136" iyy="0.000136" izz="0.000261" ixy="0.000126" iyz="-2e-06" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.031774 0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.031774 0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_frame_with_ESC_1">
+  <inertial>
+    <origin xyz="0.0628547617311962 0.046141647985313866 -0.00912134468470065" rpy="0 0 0"/>
+    <mass value="0.05710345576082083"/>
+    <inertia ixx="0.000136" iyy="0.000136" izz="0.000261" ixy="-0.000126" iyz="2e-06" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.031774 -0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.031774 -0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_right_frame_with_ESC_1">
+  <inertial>
+    <origin xyz="-0.06287835959192258 -0.04609961114854541 -0.009137427312031227" rpy="0 0 0"/>
+    <mass value="0.05567256178416202"/>
+    <inertia ixx="0.000133" iyy="0.000133" izz="0.000254" ixy="-0.000122" iyz="-2e-06" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.031158 0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.031158 0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_left_frame_with_ESC_1">
+  <inertial>
+    <origin xyz="-0.06200791017040484 0.04550785627701051 -0.009113747930991015" rpy="0 0 0"/>
+    <mass value="0.05567258778764262"/>
+    <inertia ixx="0.000134" iyy="0.000134" izz="0.000256" ixy="0.000124" iyz="2e-06" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.031158 -0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.031158 -0.048083 -0.037298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_frame_with_ESC_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_brushless_motor_1">
+  <inertial>
+    <origin xyz="-3.925789388806167e-05 2.1907662166337216e-05 0.012919945336722305" rpy="0 0 0"/>
+    <mass value="0.14416060249891507"/>
+    <inertia ixx="2.1e-05" iyy="2.1e-05" izz="2.8e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.159209 0.158912 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.159209 0.158912 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+  <motor max_torque="0.289" max_speed="11100" efficiency="0.8" Kv="1000" Kt="0.024" />
+</link>
+
+<link name="front_left_brushless_motor_1">
+  <inertial>
+    <origin xyz="-3.956759723924841e-05 2.1728352646438465e-05 0.01291994533672182" rpy="0 0 0"/>
+    <mass value="0.14416060249891507"/>
+    <inertia ixx="2.1e-05" iyy="2.1e-05" izz="2.8e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15922 -0.158901 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15922 -0.158901 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+  <motor max_torque="0.289" max_speed="11100" efficiency="0.8" Kv="1000" Kt="0.024" />
+</link>
+
+<link name="back_left_brushless_motor_1">
+  <inertial>
+    <origin xyz="-3.938828772379055e-05 2.141864929547377e-05 0.012919945336723838" rpy="0 0 0"/>
+    <mass value="0.14416060249891507"/>
+    <inertia ixx="2.1e-05" iyy="2.1e-05" izz="2.8e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.158593 -0.158912 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.158593 -0.158912 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+  <motor max_torque="0.289" max_speed="11100" efficiency="0.8" Kv="1000" Kt="0.024" />
+</link>
+
+<link name="back_right_brushless_motor_1">
+  <inertial>
+    <origin xyz="-3.907858437302014e-05 2.1597958815539053e-05 0.012919945336721236" rpy="0 0 0"/>
+    <mass value="0.14416060249891507"/>
+    <inertia ixx="2.1e-05" iyy="2.1e-05" izz="2.8e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.158604 0.158901 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.158604 0.158901 -0.037543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_brushless_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+  <motor max_torque="0.289" max_speed="11100" efficiency="0.8" Kv="1000" Kt="0.024" />
+</link>
+
+<link name="front_right_propeller_1">
+  <inertial>
+    <origin xyz="1.0534697383879355e-07 4.1879103393482886e-07 0.0027200813911011368" rpy="0 0 0"/>
+    <mass value="0.01381427696565738"/>
+    <inertia ixx="1.1e-05" iyy="0.0" izz="1.1e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.159209 0.158912 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.159209 0.158912 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_right_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_propeller_1">
+  <inertial>
+    <origin xyz="-2.0435637707039156e-07 2.394815140360773e-07 0.0027200813911007204" rpy="0 0 0"/>
+    <mass value="0.01381427696565738"/>
+    <inertia ixx="1.1e-05" iyy="0.0" izz="1.1e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15922 -0.158901 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15922 -0.158901 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/front_left_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_right_propeller_1">
+  <inertial>
+    <origin xyz="2.846564886027636e-07 1.0908768358075527e-07 0.0027200813911001237" rpy="0 0 0"/>
+    <mass value="0.01381427696565738"/>
+    <inertia ixx="1.1e-05" iyy="0.0" izz="1.1e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.158604 0.158901 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.158604 0.158901 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_right_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_left_propeller_1">
+  <inertial>
+    <origin xyz="-2.5046861723554414e-08 -7.022183695637452e-08 0.0027200813911026495" rpy="0 0 0"/>
+    <mass value="0.01381427696565738"/>
+    <inertia ixx="1.1e-05" iyy="0.0" izz="1.1e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.158593 -0.158912 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.158593 -0.158912 -0.065543" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/back_left_propeller_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_1">
+  <inertial>
+    <origin xyz="-3.459575873813255e-05 0.0016091484657327873 0.009903990760029159" rpy="0 0 0"/>
+    <mass value="0.945247365761568"/>
+    <inertia ixx="0.001446" iyy="0.000201" izz="0.001585" ixy="0.0" iyz="2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.001011 -0.0 -0.000492" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.001011 -0.0 -0.000492" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://f450_quadcopter_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="front_left_lading_gear_joint" type="fixed">
+  <origin xyz="0.046836 -0.032032 -0.001109" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_right_landing_gear_1"/>
+</joint>
+
+<joint name="front_right_lading_gear_joint" type="fixed">
+  <origin xyz="0.046836 0.032032 -0.001109" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_left_landing_gear_1"/>
+</joint>
+
+<joint name="back_right_lading_gear_joint" type="fixed">
+  <origin xyz="-0.04622 -0.032032 -0.001109" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_right_landing_gear_1"/>
+</joint>
+
+<joint name="back_left_lading_gear_joint" type="fixed">
+  <origin xyz="-0.04622 0.032032 -0.001109" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_left_landing_gear_1"/>
+</joint>
+
+<joint name="front_right_frame_with_ESC_joint" type="fixed">
+  <origin xyz="0.031774 -0.048083 0.037298" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_right_frame_with_ESC_1"/>
+</joint>
+
+<joint name="front_left_frame_with_ESC_joint" type="fixed">
+  <origin xyz="0.031774 0.048083 0.037298" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_left_frame_with_ESC_1"/>
+</joint>
+
+<joint name="back_right_frame_with_ESC_joint" type="fixed">
+  <origin xyz="-0.031158 -0.048083 0.037298" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_right_frame_with_ESC_1"/>
+</joint>
+
+<joint name="back_left_frame_with_ESC_joint" type="fixed">
+  <origin xyz="-0.031158 0.048083 0.037298" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_left_frame_with_ESC_1"/>
+</joint>
+
+<joint name="front_right_brushless_motor_joint" type="fixed">
+  <origin xyz="0.127435 -0.110829 0.000245" rpy="0 0 0"/>
+  <parent link="front_right_frame_with_ESC_1"/>
+  <child link="front_right_brushless_motor_1"/>
+</joint>
+
+<joint name="front_left_brushless_motor_joint" type="fixed">
+  <origin xyz="0.127446 0.110818 0.000245" rpy="0 0 0"/>
+  <parent link="front_left_frame_with_ESC_1"/>
+  <child link="front_left_brushless_motor_1"/>
+</joint>
+
+<joint name="back_left_brushless_motor_joint" type="fixed">
+  <origin xyz="-0.127435 0.110829 0.000245" rpy="0 0 0"/>
+  <parent link="back_left_frame_with_ESC_1"/>
+  <child link="back_left_brushless_motor_1"/>
+</joint>
+
+<joint name="back_right_brushless_motor_joint" type="fixed">
+  <origin xyz="-0.127446 -0.110818 0.000245" rpy="0 0 0"/>
+  <parent link="back_right_frame_with_ESC_1"/>
+  <child link="back_right_brushless_motor_1"/>
+</joint>
+
+<joint name="front_right_propeller_joint" type="continuous">
+  <origin xyz="0.0 0.0 0.028" rpy="0 0 0"/>
+  <parent link="front_right_brushless_motor_1"/>
+  <child link="front_right_propeller_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <!-- <aerodynamics propeller_diameter="0.254" propeller_pitch="0.1143" lift_coefficient="0.042" drag_coefficient="0.031" air_density="1.225" /> -->
+</joint>
+
+<joint name="front_left_propeller_joint" type="continuous">
+  <origin xyz="0.0 0.0 0.028" rpy="0 0 0"/>
+  <parent link="front_left_brushless_motor_1"/>
+  <child link="front_left_propeller_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <!-- <aerodynamics propeller_diameter="0.254" propeller_pitch="0.1143" lift_coefficient="0.042" drag_coefficient="0.031" air_density="1.225" /> -->
+</joint>
+
+<joint name="back_right_propeller_joint" type="continuous">
+  <origin xyz="0.0 0.0 0.028" rpy="0 0 0"/>
+  <parent link="back_right_brushless_motor_1"/>
+  <child link="back_right_propeller_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+  <!-- <aerodynamics propeller_diameter="0.254" propeller_pitch="0.1143" lift_coefficient="0.042" drag_coefficient="0.031" air_density="1.225" /> -->
+</joint>
+
+<joint name="back_left_propeller_joint" type="continuous">
+  <origin xyz="0.0 0.0 0.028" rpy="0 0 0"/>
+  <parent link="back_left_brushless_motor_1"/>
+  <child link="back_left_propeller_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <!-- <aerodynamics propeller_diameter="0.254" propeller_pitch="0.1143" lift_coefficient="0.042" drag_coefficient="0.031" air_density="1.225" /> -->
+</joint>
+
+<joint name="battery_joint" type="fixed">
+  <origin xyz="-0.001011 0.0 0.000492" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="battery_1"/>
+</joint>
+
+</robot>

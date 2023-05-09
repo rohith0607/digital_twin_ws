@@ -1,0 +1,16 @@
+<launch>
+
+<rosparam file="$(find f450_quadcopter_description)/config/quadcopter_controllers.yaml" command="load"/>
+
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/" args="front_right_propeller_joint_position_controller front_left_propeller_joint_position_controller back_right_propeller_joint_position_controller back_left_propeller_joint_position_controller joint_state_controller "/>
+
+
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+
+  <!-- <remap from="/joint_states" to="/f450_quadcopter/joint_states"/> -->
+
+</node>
+
+<node name="cmd_vel_to_quadcopter_control" pkg="f450_quadcopter_description" type="cmd_vel_to_quadcopter_control.py" output="screen"/>
+
+</launch>

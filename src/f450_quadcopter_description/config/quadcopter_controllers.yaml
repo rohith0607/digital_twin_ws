@@ -1,0 +1,23 @@
+front_right_propeller_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: front_right_propeller_joint
+  pid: {p: 0.4, i: 0.1, d: 0.002}
+
+front_left_propeller_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: front_left_propeller_joint
+  pid: {p: 0.4, i: 0.1, d: 0.002}
+
+back_right_propeller_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: back_right_propeller_joint
+  pid: {p: 0.4, i: 0.1, d: 0.002}
+
+back_left_propeller_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: back_left_propeller_joint
+  pid: {p: 0.4, i: 0.1, d: 0.002}
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
